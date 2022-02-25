@@ -16,11 +16,6 @@ public class Detect : MonoBehaviour
     public byte[] bites = new byte[2];
     void Start()
     {
-        
-    }
-    public void ConnectTia()
-    {
-      
     }
     public ConveyorBelt belt;
 
@@ -67,27 +62,27 @@ public class Detect : MonoBehaviour
         if (collider.gameObject.name == "Ray1" && s1_on == true)
         {
             on1 = true;
-            int p = c.DBRead(1, 0, 1, bites);
+            int p = c.DBRead(1, 0, 2, bites);
             S7.SetBitAt(ref bites, 0, 0, true);
             int k = c.DBWrite(1, 0, 2, bites);
         }
         if (collider.gameObject.name == "Ray2" && s2_on == true)
         {
             on2 = true;
-            int p = c.DBRead(1, 0, 1, bites);
+            int p = c.DBRead(1, 0, 2, bites);
             S7.SetBitAt(ref bites, 0, 1, true);
             int k = c.DBWrite(1, 0, 2, bites);
         }
         if (collider.gameObject.name == "Ray3" && s3_on == true)
         {
             on3 = true;
-            int p = c.DBRead(1, 0, 1, bites);
+            int p = c.DBRead(1, 0, 2, bites);
             S7.SetBitAt(ref bites, 0, 2, true);
             int k = c.DBWrite(1, 0, 2, bites);
         }
         if(collider.gameObject.name == "Ray4" && s4_on == true)
         {
-           int p = c.DBRead(1, 0, 1, bites);
+           int p = c.DBRead(1, 0, 2, bites);
             S7.SetBitAt(ref bites, 0, 3, true);
             int k = c.DBWrite(1, 0, 2, bites);
             on4 = true;
@@ -101,31 +96,31 @@ public class Detect : MonoBehaviour
         if (collider.gameObject.name == "Ray1" && s1_on == true)
         {
             on1 = false;
-            int p = c.DBRead(1, 0, 1, bites);
+            int p = c.DBRead(1, 0, 2, bites);
             S7.SetBitAt(ref bites, 0, 0, false);
             int k = c.DBWrite(1, 0, 2, bites);
          }
         if (collider.gameObject.name == "Ray2" && s2_on == true)
         {
             on2 = false;
-            int p = c.DBRead(1, 0, 1, bites);
+            int p = c.DBRead(1, 0, 2, bites);
             S7.SetBitAt(ref bites, 0, 1, false);
             int k = c.DBWrite(1, 0, 2, bites);
         }
         if (collider.gameObject.name == "Ray3" && s3_on == true)
         {
             on3 = false;
-            int p = c.DBRead(1, 0, 1, bites);
+            int p = c.DBRead(1, 0, 2, bites);
             S7.SetBitAt(ref bites, 0, 2, false);
             int k = c.DBWrite(1, 0, 2, bites);
         }
         if (collider.gameObject.name == "Ray4" && s4_on == true)
         {
-            int p1 = c.DBRead(1, 0, 1, bites);
+            int p1 = c.DBRead(1, 0, 2, bites);
             S7.SetBitAt(ref bites, 0, 3, true);
             int k2 = c.DBWrite(1, 0, 2, bites);
             on4 = false;
-            int p = c.DBRead(1, 0, 1, bites);
+            int p = c.DBRead(1, 0, 2, bites);
             S7.SetBitAt(ref bites, 0, 3, false);
             int k = c.DBWrite(1, 0, 2, bites);
         }

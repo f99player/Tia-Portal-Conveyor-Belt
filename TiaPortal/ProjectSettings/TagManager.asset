@@ -8,6 +8,7 @@ TagManager:
   - H2
   - H3
   - Puck
+  - Puck3
   layers:
   - Default
   - TransparentFX
