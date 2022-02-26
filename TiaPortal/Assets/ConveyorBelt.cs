@@ -4,15 +4,16 @@ using UnityEngine;
 using Sharp7;
 public class ConveyorBelt : MonoBehaviour
 {
-    [SerializeField] public float speed = 50f;
+    [SerializeField] public float speed = 1000f;
     public Sharp7.S7Client c = new S7Client();
     public byte[] bites = new byte[2];
     public Vector3 direction = new Vector3(0.075f,0,0);
     public List<GameObject> Items_on_belt;
-
     // Start is called before the first frame update
     void Start()
     {
+         QualitySettings.vSyncCount = 0;
+         Application.targetFrameRate = 120;
     }
     // Update is called once per frame
     void Update()
