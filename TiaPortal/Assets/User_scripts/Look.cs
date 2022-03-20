@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Look : MonoBehaviour
 {
+    public Camera cam;
+    public float defaultFOV = 60f;
     public float mouse_sensitivity = 500f;
     public Transform User_body;
     float xRotation = 0f;
@@ -21,5 +23,9 @@ public class Look : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -90f,90f);
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         User_body.Rotate(Vector3.up*mouse_X);
+        if(Input.GetMouseButton(1))
+        cam.fieldOfView = (defaultFOV/2);
+        else
+        cam.fieldOfView = defaultFOV;
     }
 }
